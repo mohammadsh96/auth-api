@@ -13,6 +13,7 @@ const secretRouter=require("./routes/secret");
 const getUsersRouters=require("./routes/allUsers");
 const aclRouter =require("./routes/acl.route");
 const router =require("./routes/router");
+app.get("/" , handleHome)
 
 
 app.use(express.json());
@@ -23,6 +24,11 @@ app.use(getUsersRouters);
 app.use(aclRouter);
 app.use(router);
 
+function handleHome(req ,res){
+res.send("welcome to heroku auth-api server")
+
+
+}
 
 
 app.use("*", notFoundHandler);
