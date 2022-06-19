@@ -2,9 +2,9 @@
 
 [heroku app]()
 
-[pull request]()
+[pull request](https://github.com/mohammadsh96/auth-api2/pull/1)
 
-[github actions]()
+[github actions](https://github.com/mohammadsh96/auth-api2/actions)
 
 
 ## UML
