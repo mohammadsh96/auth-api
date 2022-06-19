@@ -1,7 +1,7 @@
 'use strict';
 require('dotenv').config();
-const foodModel = require('./food.model');
-const clothesModel = require('./clothes.model');
+const drinksModel = require('./cafe.model');
+
 const Collection = require('./collection');
 const { Sequelize, DataTypes } = require('sequelize');
 const UserModel = require('./user.model');
@@ -19,18 +19,17 @@ process.env.NODE_ENV === "production"
      : {};
 
 let sequelize = new Sequelize(POSTGRES_URI, sequelizeOptions);
-const foodTable = foodModel(sequelize, DataTypes);
-const clothesTable = clothesModel(sequelize, DataTypes);
+const drinksTable = drinksModel(sequelize, DataTypes);
+
 const userTable = UserModel(sequelize, DataTypes);
 
 
 
-const foodCollection = new Collection(foodTable);
-const clothesCollection = new Collection(clothesTable);
+const drinksCollection = new Collection(drinksTable);
+
 
 module.exports = {
     db: sequelize,
-    food:foodCollection,
-    clothes:clothesCollection,
+    drinks:drinksCollection,
     Users: userTable,
 };
